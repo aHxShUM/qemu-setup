@@ -16,4 +16,4 @@
 
 ## Go to device manager and install driver
 
-[Driver download link](http://www.realtek.com.tw/Downloads/downloadsCheck.aspx?Langid=1&PNid=14&PFid=23&Level=4&Conn=3&DownTypeID=3&GetDown=false)
+[Driver download link](http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&PNid=14&PFid=23&Level=4&Conn=3&DownTypeID=3&GetDown=false)
