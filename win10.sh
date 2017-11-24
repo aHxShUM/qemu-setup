@@ -11,6 +11,9 @@ OPT="$OPT -m 4G"
 # Graphic
 OPT="$OPT -vga qxl"
 
+# Sound
+OPT="$OPT -soundhw ac97"
+
 # Drive
 OPT="$OPT -drive file=img/base.img,media=disk,index=0"
 OPT="$OPT -drive file=/home/ahshum/Downloads/Windows10.iso,media=cdrom"
