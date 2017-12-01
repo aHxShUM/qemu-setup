@@ -2,6 +2,7 @@
 
 OPT=""
 OPT="$OPT -enable-kvm"
+OPT="$OPT -localtime"
 
 # Core
 OPT="$OPT -cpu host"
