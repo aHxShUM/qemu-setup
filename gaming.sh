@@ -2,6 +2,7 @@
 
 OPT=""
 OPT="$OPT -enable-kvm"
+OPT="$OPT -localtime"
 
 # Core
 #OPT="$OPT -cpu host,kvm=off,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,hv_vendor_id=Nvidia43FIX"
