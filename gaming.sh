@@ -2,7 +2,7 @@
 
 OPT=""
 OPT="$OPT -enable-kvm"
-OPT="$OPT -localtime"
+OPT="$OPT -rtc base=localtime"
 
 # Core
 #OPT="$OPT -cpu host,kvm=off,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,hv_vendor_id=Nvidia43FIX"
@@ -14,20 +14,21 @@ OPT="$OPT -bios /usr/share/qemu/OVMF.fd"
 
 # Display
 OPT="$OPT -vga qxl"
-OPT="$OPT -sdl"
 
 # Sound
-OPT="$OPT -soundhw ac97"
+OPT="$OPT -device AC97"
 
 # Drive
 #OPT="$OPT -boot order=dc"
 OPT="$OPT -drive file=/vm/gaming/img/gaming.img,if=virtio,format=qcow2"
-#OPT="$OPT -drive file=/home/ahshum/Downloads/Windows10.iso,media=cdrom"
-#OPT="$OPT -drive file=/home/ahshum/Downloads/virtio-win-0.1.141.iso,media=cdrom"
+OPT="$OPT -drive file=/home/ahshum/Downloads/Windows10.iso,media=cdrom"
+OPT="$OPT -drive file=/home/ahshum/Downloads/virtio-win-0.1.141.iso,media=cdrom"
 
 # Net
-OPT="$OPT -net nic,model=e1000"
-OPT="$OPT -net user,smb=/vm/gaming/shared"
+OPT="$OPT -netdev bridge,id=br0"
+OPT="$OPT -device virtio-net,netdev=br0"
+OPT="$OPT -netdev user,id=netuser,smb=/vm/gaming/shared"
+OPT="$OPT -device virtio-net,netdev=netuser"
 
 # Passthrough
 OPT="$OPT -device virtio-serial-pci"
