@@ -1,8 +1,11 @@
 #!/bin/sh
 
+CWD=$(readlink -f ../)
+
 OPT=""
 OPT="$OPT -enable-kvm"
 OPT="$OPT -rtc base=localtime"
+OPT="$OPT -alt-grab"
 
 # Core
 #OPT="$OPT -cpu host,kvm=off,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,hv_vendor_id=Nvidia43FIX"
@@ -26,8 +29,8 @@ OPT="$OPT -drive file=/home/ahshum/Downloads/virtio-win-0.1.141.iso,media=cdrom"
 
 # Net
 OPT="$OPT -netdev bridge,id=br0"
-OPT="$OPT -device virtio-net,netdev=br0"
-OPT="$OPT -netdev user,id=netuser,smb=/vm/gaming/shared"
+OPT="$OPT -device virtio-net,netdev=br0,mac=52:54:01:12:34:56"
+OPT="$OPT -netdev user,id=netuser,smb=$CWD/share"
 OPT="$OPT -device virtio-net,netdev=netuser"
 
 # Passthrough
