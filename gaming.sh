@@ -8,7 +8,7 @@ OPT="$OPT -rtc base=localtime"
 OPT="$OPT -alt-grab"
 
 # Core
-#OPT="$OPT -cpu host,kvm=off,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,hv_vendor_id=Nvidia43FIX"
+#OPT="$OPT -cpu host,kvm=off,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,hv_vendor_id=123456789ab"
 OPT="$OPT -cpu host,kvm=off,hv_vendor_id=123456789ab"
 OPT="$OPT -smp cores=4,threads=1,sockets=1"
 OPT="$OPT -m 6G"
